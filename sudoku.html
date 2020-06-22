@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Sudoku Page</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+                crossorigin="anonymous">
+</head>
+
+<!-- using the onload function to initialize the sudoku table -->
+
+<body onload="initializeSudokuTable()">
+
+        <div class="container">
+                <div>
+                        <p id="goodLuck">Good Luck</p>
+                </div>
+
+                <!-- table element to present the game table for sudoku -->
+                <!-- each table data contains input element -->
+                <!-- oninput enables to use a function that validates each input in real time -->
+                <table id="sudokuTable">
+                        <tr>
+                                <td class="tableCell"><input id="cell00" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell01" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell02" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell03" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell04" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell05" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell06" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell07" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell08" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell10" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell11" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell12" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell13" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell14" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell15" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell16" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell17" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell18" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell20" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell21" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell22"
+                                                class="inputCell cellBorderBottom cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell23" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell24" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell25"
+                                                class="inputCell cellBorderBottom cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell26" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell27" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell28" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell30" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell31" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell32" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell33" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell34" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell35" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell36" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell37" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell38" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell40" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell41" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell42" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell43" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell44" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell45" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell46" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell47" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell48" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell50" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell51" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell52"
+                                                class="inputCell cellBorderBottom cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell53" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell54" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell55"
+                                                class="inputCell cellBorderBottom cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell56" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell57" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell58" class="inputCell cellBorderBottom" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell60" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell61" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell62" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell63" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell64" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell65" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell66" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell67" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell68" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell70" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell71" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell72" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell73" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell74" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell75" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell76" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell77" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell78" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+
+                        <tr>
+                                <td class="tableCell"><input id="cell80" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell81" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell82" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell83" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell84" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell85" class="inputCell cellBorderRight" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+
+                                <td class="tableCell"><input id="cell86" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell87" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                                <td class="tableCell"><input id="cell88" class="inputCell" type="text"
+                                                oninput="validateCellInput(this)" maxlength="1"></td>
+                        </tr>
+                </table>
+
+                <!-- div element for the options menu, contains 5 buttons -->
+                <div id="optionsMenu">
+                        <p id="optionsTitle">Menu:</p><br>
+                        <button type="button" class="btn-success menuButton finishBtn" onclick="solveGame()">Finish</button><br>
+                        <button type="button" class="btn-light menuButton" onclick="surrenderGame()">Surrender</button><br>
+                        <button type="button" class="btn-primary menuButton" onclick="playAgain()">Again</button><br>
+                        <button type="button" class="btn-warning menuButton" id="newGameBtn" onclick="playNewGame()">New Game</button><br>
+                        <button type="button" class="btn-danger menuButton"onclick="chooseDifficulty()">Difficulty</button><br>
+                </div>
+        </div>
+
+        <!-- finish message box -->
+        <!-- this element appears after clicking the finish button -->
+        <div id="finishMessage">
+                <div id="messageBox">
+                        <p id="message"></p>
+                        <button type="button" id="closeBtn" onclick="closeMessageBox()">close</button>
+                </div>
+        </div>
+
+
+        <script src='scriptSudoku.js'></script>
+</body>
+
+</html>

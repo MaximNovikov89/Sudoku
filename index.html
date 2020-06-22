@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div col="col-sm-4" id="loginDiv">
+                <h1 id="title">~Sudoku~</h1>
+                <!-- elements for username -->
+                <input class="login" id="username" type="text" placeholder="User Name">
+                <abbr title="User Name: abcd"><img id="ideaImgUser" src="idea.png" alt="idea img"></abbr>
+                <!-- element p for error message (hidden) -->
+                <p id="usernameError" class="error login"></p>
+                <!-- elements for password -->
+                <input class="login" id="password" type="password" placeholder="Password">
+                <abbr title="Password: 1234"><img id="ideaImgPassword" src="idea.png" alt="idea img"></abbr>
+                <!-- element p for error message (hidden) -->
+                <p id="passwordError" class="error login"></p>
+                <button class="login btn-info" id="loginBtn" type="button" onclick="sudokuLogin()">Login</button>
+            </div>
+            <div col="col-sm-4"></div>
+            <div col="col-sm-4"></div>
+        </div>
+    </div>
+
+    <script src='script.js'></script>
+</body>
+
+</html>

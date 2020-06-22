@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Menu Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div col="col-sm-12">
+                <h1 id="menuTitle">Welcome,<span id="name">abcd</span></h1>
+                <h3 id="difficulty">── Level Difficulty ──</h3> <!--alt 196-->
+                <!-- buttons for level difficulty -->
+                <button class="btn-success levelBtn" type="button" onclick="easyLevel()">Easy</button>
+                <button class="btn-primary levelBtn" type="button" onclick="mediumLevel()">Medium</button>
+                <button class="btn-danger levelBtn" type="button" onclick="hardLevel()">Hard</button>
+            </div>
+        </div>
+    </div>
+
+    <script src='scriptMenu.js'></script>
+</body>
+
+</html>
